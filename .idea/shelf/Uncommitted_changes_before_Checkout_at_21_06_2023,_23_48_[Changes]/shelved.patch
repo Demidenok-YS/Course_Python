@@ -1,0 +1,24 @@
+Index: Homework_5/task_28.py
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.BaseRevisionTextPatchEP
+<+># Задача 28: Вводится десятичное число. Реализовать алгоритм его перевода в\n# двоичную систему счисления через рекурсию. Нельзя использовать функцию bin()\n# *Пример:*\n#     10\n#     *Вывод:*\n#     1010\n\ndef conv(n):\n    if n // 2 == 0:\n        return n % 2\n    return conv(n // 2), n % 2\n\nn = int(input('Введите десятичное число: '))\nprint(conv(n))
+===================================================================
+diff --git a/Homework_5/task_28.py b/Homework_5/task_28.py
+--- a/Homework_5/task_28.py	
++++ b/Homework_5/task_28.py	
+@@ -5,10 +5,10 @@
+ #     *Вывод:*
+ #     1010
+ 
+-def conv(n):
+-    if n // 2 == 0:
+-        return n % 2
+-    return conv(n // 2), n % 2
++def conv(n):                            # 2 вариант условия
++    if n // 2 == 0:                     # if n == 0 or n == 1:
++        return f'{n % 2}'               # return f'{n}'
++    return conv(n // 2) + f'{n % 2}'
+ 
+ n = int(input('Введите десятичное число: '))
+ print(conv(n))
+\ No newline at end of file
